@@ -2,7 +2,6 @@
 
 ```sh
 export NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
-
 ```
 
 # We have to create the monorepo
