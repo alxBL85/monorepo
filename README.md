@@ -13,7 +13,6 @@ pnpm dlx create-turbo@latest demo --package-manager=pnpm
 # Install graph dependencies
 
 ```sh
-sudo apt install graphviz
 cd demo
 pnpm i @yeger/turbo-graph -w
 ```
@@ -48,27 +47,21 @@ pnpm i @yeger/turbo-graph -w
       "dependsOn": ["^test"]
     },
     "deploy": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build", "^deploy"]
     }
   }
 }
 ```
 
-# Generage pdf graph
+# Create deploy script
 
-```sh
-npx turbo run build --graph=graph.pdf
+```json
+"deploy": "turbo deploy",
 ```
 
 # Create graph script
 
 ```json
-"graph": "turbo-graph -o"
+"graph": "turbo-graph -o",
 
-```
-
-# Create deploy script
-
-```json
-  "deploy": "turbo deploy",
 ```
